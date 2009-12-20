@@ -11,7 +11,7 @@
 #define PCI_HAVE_PM_DUMP
 #define PCI_COMPRESSED_IDS
 #define PCI_IDS "pci.ids.gz"
-#define PCI_PATH_IDS_DIR "/usr/local/share"
+#define PCI_PATH_IDS_DIR "/usr/share/misc"
 #undef PCI_USE_DNS
 #define PCI_ID_DOMAIN "pci.id.ucw.cz"
 #define PCILIB_VERSION "3.0.2"
