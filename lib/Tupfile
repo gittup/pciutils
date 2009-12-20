@@ -1,0 +1,23 @@
+ifeq (@(PCI),y)
+include_rules
+
+srcs += init.c
+srcs += access.c
+srcs += caps.c
+srcs += generic.c
+srcs += dump.c
+srcs += names.c
+srcs += filter.c
+srcs += names-hash.c
+srcs += names-parse.c
+srcs += names-net.c
+srcs += names-cache.c
+srcs += params.c
+srcs += sysfs.c
+srcs += proc.c
+srcs += i386-ports.c
+
+CFLAGS += -I$(GITTUP_ROOT)/zlib
+: foreach $(srcs) |> !cc |> %B.o {objs}
+: {objs} |> !ar |> libpci.a
+endif

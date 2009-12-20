@@ -1,0 +1,3 @@
+ifeq (@(PCI),y)
+: foreach $(TUP_CWD)/lspci |> !cp |> %b
+endif

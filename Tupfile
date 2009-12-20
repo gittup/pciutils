@@ -1,0 +1,14 @@
+ifeq (@(PCI),y)
+include_rules
+
+srcs += lspci.c
+srcs += common.c
+srcs += ls-kernel.c
+srcs += ls-caps.c
+srcs += ls-ecaps.c
+srcs += ls-vpd.c
+srcs += ls-map.c
+srcs += ls-tree.c
+: foreach $(srcs) |> !cc |> %B.o
+: *.o lib/libpci.a $(GITTUP_ROOT)/zlib/libz.a |> !ld |> lspci
+endif
